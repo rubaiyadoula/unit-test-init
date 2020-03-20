@@ -1,6 +1,8 @@
 package me.rubaiya;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,17 +12,17 @@ public class CalculatorTest {
 
     @Test
     void addCorrectTest() {
-        assertEquals(calculator.add(10, 20), 30, "All is well.");
+        assertEquals(30, calculator.add(10, 20), "All is well.");
     }
 
     @Test
     void addIncorrectTest() {
-        assertNotEquals(calculator.add(10, 20), 0, "Failure is the pillar of success.");
+        assertNotEquals(0, calculator.add(10, 20),"Failure is the pillar of success.");
     }
 
     @Test
     void addTypeIncorrectTest() {
-        assertNotEquals(calculator.add(10, 20), true, "You're just not my type.");
+        assertNotEquals(true, calculator.add(10, 20),"You're just not my type.");
     }
 
     @Test
@@ -28,4 +30,9 @@ public class CalculatorTest {
         assertNotNull(calculator.add(10, 30), "No place for emptiness.");
     }
 
+    @ParameterizedTest
+    @CsvSource(value = {"100, 200, 300", "0, 0, 0", "1, 1, 2"})
+    void addParameterizedTest(int a, int b, int result) {
+        assertEquals(result, calculator.add(a, b));
+    }
 }
