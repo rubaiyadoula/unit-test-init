@@ -10,17 +10,17 @@ public class CalculatorTest {
 
     @Test
     void addCorrectTest() {
-        assertEquals(calculator.add(10, 20), 30, "All is well.");
+        assertEquals(30, calculator.add(10, 20), "All is well.");
     }
 
     @Test
     void addIncorrectTest() {
-        assertNotEquals(calculator.add(10, 20), 0, "Failure is the pillar of success.");
+        assertNotEquals(0, calculator.add(10, 20),"Failure is the pillar of success.");
     }
 
     @Test
     void addTypeIncorrectTest() {
-        assertNotEquals(calculator.add(10, 20), true, "You're just not my type.");
+        assertNotEquals(true, calculator.add(10, 20),"You're just not my type.");
     }
 
     @Test
