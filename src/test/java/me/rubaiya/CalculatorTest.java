@@ -1,6 +1,8 @@
 package me.rubaiya;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -28,4 +30,9 @@ public class CalculatorTest {
         assertNotNull(calculator.add(10, 30), "No place for emptiness.");
     }
 
+    @ParameterizedTest
+    @CsvSource(value = {"100, 200, 300", "0, 0, 0", "1, 1, 2"})
+    void addParameterizedTest(int a, int b, int result) {
+        assertEquals(result, calculator.add(a, b));
+    }
 }
