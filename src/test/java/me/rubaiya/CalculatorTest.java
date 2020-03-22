@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.time.Duration;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatorTest {
@@ -34,5 +36,11 @@ public class CalculatorTest {
     @CsvSource(value = {"100, 200, 300", "0, 0, 0", "1, 1, 2"})
     void addParameterizedTest(int a, int b, int result) {
         assertEquals(result, calculator.add(a, b));
+    }
+
+    @Test
+    void performanceTest() {
+        // This test assures that the add method is calculating within 1s.
+        assertTimeout(Duration.ofSeconds(1), () -> calculator.add(5, 6));
     }
 }
