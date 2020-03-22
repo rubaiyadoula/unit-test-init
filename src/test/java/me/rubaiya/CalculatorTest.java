@@ -30,7 +30,7 @@ public class CalculatorTest {
         assertNotNull(calculator.add(10, 30), "No place for emptiness.");
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "{0} + {1} = {2}")
     @CsvSource(value = {"100, 200, 300", "0, 0, 0", "1, 1, 2"})
     void addParameterizedTest(int a, int b, int result) {
         assertEquals(result, calculator.add(a, b));
