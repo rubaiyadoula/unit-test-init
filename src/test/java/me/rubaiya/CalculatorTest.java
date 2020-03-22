@@ -20,7 +20,6 @@ public class CalculatorTest {
     }
 
     @Test
-    @Disabled
     void addCorrectTest() {
         assertEquals(30, calculator.add(10, 20), "All is well.");
     }
@@ -31,6 +30,7 @@ public class CalculatorTest {
     }
 
     @Test
+    @Disabled
     void addTypeIncorrectTest() {
         assertNotEquals(true, calculator.add(10, 20),"You're just not my type.");
     }
