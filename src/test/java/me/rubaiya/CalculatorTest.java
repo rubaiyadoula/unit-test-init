@@ -1,6 +1,7 @@
 package me.rubaiya;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -19,6 +20,7 @@ public class CalculatorTest {
     }
 
     @Test
+    @Disabled
     void addCorrectTest() {
         assertEquals(30, calculator.add(10, 20), "All is well.");
     }
