@@ -1,5 +1,6 @@
 package me.rubaiya;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -10,7 +11,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatorTest {
 
-    Calculator calculator = new Calculator();
+    Calculator calculator;
+
+    @BeforeEach
+    void init() {
+        calculator = new Calculator();
+    }
 
     @Test
     void addCorrectTest() {
