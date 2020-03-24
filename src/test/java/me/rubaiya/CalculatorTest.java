@@ -30,7 +30,6 @@ public class CalculatorTest {
     }
 
     @Test
-    @Disabled
     void addTypeIncorrectTest() {
         assertNotEquals(true, calculator.add(10, 20),"You're just not my type.");
     }
